@@ -1,0 +1,28 @@
+{
+
+    "userdata": { },
+    "total": "1",
+    "rows": [
+        {
+            "email": "nobody@domain.com",
+            "first_name": "Admin",
+            "last_name": "User",
+            "id": 1,
+            "permissions": [
+                "admin"
+            ]
+        },
+        {
+            "email": "somebody@otherdomain.comt",
+            "first_name": "Regular",
+            "last_name": "User",
+            "id": 2,
+            "permissions": [
+                "auth"
+            ]
+        }
+    ],
+    "page": "1",
+    "records": "2"
+
+}

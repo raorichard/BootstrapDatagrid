@@ -1,0 +1,113 @@
+/*
+* Fuel UX Datagrid
+* https://github.com/ExactTarget/fuelux
+*
+* Copyright (c) 2012 ExactTarget
+* Licensed under the MIT license.
+*/
+
+.bootstrap .datagrid thead {
+    background-color: #f9f9f9;
+}
+
+.bootstrap .datagrid thead .datagrid-header-title {
+    float: left;
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 28px;
+}
+
+.bootstrap .datagrid thead .datagrid-header-left {
+    float: left;
+}
+
+.bootstrap .datagrid thead .datagrid-header-right {
+    float: right;
+}
+
+.bootstrap .datagrid thead .sorted {
+    color: #333333;
+    text-shadow: 'none';
+    background-color: #f1f1f1;
+    background-image: -moz-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: linear-gradient(to bottom, #f9f9f9, #e5e5e5);
+    background-repeat: repeat-x;
+    border-color: #e5e5e5 #e5e5e5 #bebebe;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#ffe5e5e5', GradientType=0);
+}
+
+.bootstrap .datagrid thead .sorted i {
+    float: right;
+    margin-top: 2px;
+}
+
+.bootstrap .datagrid thead .sortable {
+    cursor: pointer;
+}
+
+.bootstrap .datagrid thead .sortable:hover {
+    color: #333333;
+    text-shadow: 'none';
+    background-color: #f1f1f1;
+    background-image: -moz-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f9f9f9, #e5e5e5);
+    background-image: linear-gradient(to bottom, #f9f9f9, #e5e5e5);
+    background-repeat: repeat-x;
+    border-color: #e5e5e5 #e5e5e5 #bebebe;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#ffe5e5e5', GradientType=0);
+}
+
+.bootstrap .datagrid tfoot {
+    background-color: #f9f9f9;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-left {
+    float: left;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-left .grid-controls {
+    margin-top: 7px;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-left .grid-controls select {
+    width: 60px;
+    margin: 0 5px 1px;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-left .grid-controls span {
+    font-weight: normal;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-right {
+    float: right;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-right .grid-pager > span {
+    position: relative;
+    top: 8px;
+    font-weight: normal;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-right .grid-pager .dropdown-menu {
+    min-width: 50px;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-right .grid-pager .combobox {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+}
+
+.bootstrap .datagrid tfoot .datagrid-footer-right .grid-pager > button {
+    position: relative;
+    top: 7px;
+}

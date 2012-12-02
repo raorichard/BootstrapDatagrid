@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="bootstrap">
+<head>
+    <title>Bootstrap Datagrid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.datagrid.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/require.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Bootstrap Datagrid</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="/home">Home</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">My Cool Service</a></li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Pay Now</li>
+                            <li><a href="#">Paypal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <style>
+        table tr.even {
+            background: #ebebeb;
+        }
+        table tr.odd {
+            background: #ffffff;
+        }
+    </style>
+    <script type="text/javascript">
+        require(['datagrid', 'jsondata', 'jquery.json'], function (datagrid, JSONDataSource) {
+            $(function () {
+                $.ajax({
+                    url: "/json/users.json",
+                    dataType: 'json',
+                    data: "{}",
+
+                    success: function (data) {
+                        var dataSource = new JSONDataSource({
+                            columns: [{
+                                property: 'id',
+                                label: 'ID',
+                                sortable: true,
+                                align: 'center'
+                            }, {
+                                property: 'first_name',
+                                label: 'First Name',
+                                sortable: true,
+                            }, {
+                                property: 'last_name',
+                                label: 'Last Name',
+                                sortable: true
+                            }, {
+                                property: 'username',
+                                label: 'Username',
+                                sortable: true
+                            },{
+                                property: 'email',
+                                label: 'Email',
+                                sortable: true
+                            }, {
+                                property: 'permissions',
+                                label: 'Permissions',
+                                sortable: true
+                            }],
+                            data: data.rows,
+                            delay: 250
+                        });
+
+                        $('#user_grid')
+                                .datagrid({dataSource: dataSource,
+                                    onRowDblClick: 'myFunc',
+                                    evenRowCSS: 'even',
+                                    oddRowCSS: 'odd'});
+                    }
+                });
+            })
+        });
+
+        function myFunc(obj) {
+            alert(obj.email);
+        }
+
+    </script>
+
+    <table id="user_grid" class="table table table-bordered table-hover datagrid">
+        <thead>
+        <tr>
+            <th>
+            <span class="datagrid-header-title">
+                Users
+            </span>
+                <div class="datagrid-header-left">
+                </div>
+                <div class="datagrid-header-right">
+                    <div class="input-append search">
+                        <input type="text" class="input-medium" placeholder="Search">
+                        <button class="btn"><i class="icon-search"></i></button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>
+                <div class="datagrid-footer-left" style="display:none;">
+                    <div class="grid-controls">
+                    <span><span class="grid-start"></span> - <span class="grid-end"></span> of <span
+                            class="grid-count"></span></span>
+                        <select class="grid-pagesize">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                        <span>Per Page</span>
+                    </div>
+                </div>
+                <div class="datagrid-footer-right" style="display:none;">
+                    <div class="grid-pager">
+                        <button class="btn grid-prevpage"><i class="icon-chevron-left"></i></button>
+                        <span>Page</span>
+                        <div class="input-append dropdown combobox">
+                            <input class="span1" type="text">
+                            <button class="btn" data-toggle="dropdown"><i class="caret"></i></button>
+                            <ul class="dropdown-menu"></ul>
+                        </div>
+                        <span>of <span class="grid-pages"></span></span>
+                        <button class="btn grid-nextpage"><i class="icon-chevron-right"></i></button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="container">
+    <hr>
+    <footer><p>I can't think of a damn thing to say.</p></footer>
+</div>
+</body>
+</html>
+</body>
+</html>
